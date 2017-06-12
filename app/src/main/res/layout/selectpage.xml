@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="语音拨号"
+        android:id="@+id/dial"
+        android:layout_weight="0.34"
+        android:textSize="@dimen/abc_text_size_display_1_material" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="语音短信"
+        android:id="@+id/flight"
+        android:layout_weight="0.26"
+        android:textSize="@dimen/abc_text_size_display_1_material" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="138dp"
+        android:text="语音打开网页"
+        android:id="@+id/web"
+        android:textSize="@dimen/abc_text_size_display_1_material" />
+
+</LinearLayout>
