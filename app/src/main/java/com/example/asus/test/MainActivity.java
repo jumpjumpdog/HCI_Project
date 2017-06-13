@@ -32,7 +32,7 @@ import com.iflytek.cloud.util.ContactManager.ContactListener;
 
 public class MainActivity extends Activity implements OnClickListener{
     private static final String TAG = MainActivity.class.getSimpleName();
-    private Toast mToast;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +41,6 @@ public class MainActivity extends Activity implements OnClickListener{
         setContentView(R.layout.activity_main);
         initLayout();
 
-
-
     }
 
     @Override
@@ -50,14 +48,9 @@ public class MainActivity extends Activity implements OnClickListener{
         Log.d(TAG, "enter mainactivity click");
         Intent intent = null;
         switch (view.getId()){
-            case R.id.iat_recognize:
-                Log.d(TAG,"听写");
-                //intent = new Intent(MainActivity.this, IatDemo.class);
-                intent = new Intent(MainActivity.this,test.class);
-                break;
-            case R.id.speech_helper:
-                Log.d(TAG,"助手");
-                intent = new Intent(MainActivity.this, SelectActivity.class);
+            case R.id.icon:
+                Log.d(TAG,"按钮按下");
+                intent = new Intent(MainActivity.this,SelectActivity.class);
                 break;
                 }
         if (intent != null) {
@@ -68,8 +61,7 @@ public class MainActivity extends Activity implements OnClickListener{
      * 初始化Layout。
      */
     private void initLayout(){
-        findViewById(R.id.iat_recognize).setOnClickListener(MainActivity.this);
-        findViewById(R.id.speech_helper).setOnClickListener(MainActivity.this);
+        findViewById(R.id.icon).setOnClickListener(MainActivity.this);
     }
 
 

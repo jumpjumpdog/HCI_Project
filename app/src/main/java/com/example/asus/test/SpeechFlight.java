@@ -12,12 +12,15 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import com.google.gson.*;
 import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SpeechFlight extends Activity {
     private String mUnderStanderResult=null;
@@ -26,26 +29,39 @@ public class SpeechFlight extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_speech_flight);
+        setContentView(R.layout.content_speech_flight);
 
         Intent intent = getIntent();
         mUnderStanderResult = intent.getStringExtra("mUnderstanderResult");
         strs = com.example.asus.test.JsonParser.parseToFlight(mUnderStanderResult);
+
+
         lv =(ListView)findViewById(R.id.listView);
-        lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, strs));
+        SimpleAdapter adapter = new SimpleAdapter(this,getData(),R.layout.item,new String [] {"aPort","dPort","airline","takeOffTime","arriveTime","cabinInfor"},new int[]{R.id.aPort,R.id.dPort,R.id.airline,R.id.takeOffTime,R.id.arriveTime,R.id.cabinInfor});
+        lv.setAdapter(adapter);
     }
+
        // mUnderStanderResult = intent.getStringExtra("");
-
-    private void processFunc()
+    private List<Map<String,Object>>getData()
     {
-        String aPort,dPort,airPlane;
-        List<FlightBean.DataBean.ResultBean> mResultDataArray;
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
-        for(String x:strs)
+        Map<String, Object> map = new HashMap<String, Object>();
+        for(int i=0;i<strs.size();)
         {
-            strs.add(x);
+            map.put("aPort","aPort:   "+strs.get(i));
+            map.put("dPort","dPort:    "+strs.get(i+1));
+            map.put("airline","airline:  "+strs.get(i+2));
+            map.put("takeOffTime","takeOffTime:   "+strs.get(i+3));
+            map.put("arriveTime","arriveTime:    "+strs.get(i+4));
+            map.put("cabinInfor","cabinInfor:  "+strs.get(i+5));
+            list.add(map);
+            map = new HashMap<String, Object>();
+            i=i+6;
         }
+        return list;
     }
+
 
 }
 

@@ -44,9 +44,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SpeechFlight"></activity>
-        <activity android:name=".SpeechWeb"></activity>
         <activity android:name=".SpeechCall"></activity>
         <activity android:name=".SelectActivity"></activity>
+        <activity android:name=".SpeechWeather"></activity>
 
     </application>
 

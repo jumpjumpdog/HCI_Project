@@ -7,37 +7,30 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/"
+    android:background="#904141"
     tools:context="com.example.asus.test.MainActivity">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="209dp"
-            android:text="语音识别"
-            android:id="@+id/iat_recognize"
-            android:layout_gravity="left|top"
-            android:textColorHighlight="@color/abc_primary_text_material_light"
-            android:textSize="@dimen/abc_text_size_display_1_material" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
 
-        <Button
-            android:layout_width="349dp"
-            android:layout_height="249dp"
-            android:text="语音助手"
-            android:id="@+id/speech_helper"
-            android:layout_gravity="center_horizontal|bottom"
-            android:textSize="@dimen/abc_text_size_display_1_material" />
+    </LinearLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView"
-            android:layout_gravity="center" />
-    </FrameLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+    android:orientation="horizontal"
+        android:paddingLeft="120dp">
+11    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="69dp"
+        android:background="@mipmap/icon"
+        android:layout_centerInParent="true"
+        android:paddingLeft="100dp"
+        android:id="@+id/icon" />
+    </LinearLayout>
+
 </RelativeLayout>

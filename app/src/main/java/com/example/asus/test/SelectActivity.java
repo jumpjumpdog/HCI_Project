@@ -41,7 +41,7 @@ public class SelectActivity extends Activity implements View.OnClickListener {
         mgr = ContactManager.createManager(SelectActivity.this, mContactListener);
         mgr.asyncQueryAllContactsName();
 
-        toast =Toast.makeText(getApplicationContext(),"",Toast.LENGTH_SHORT);
+        toast =Toast.makeText(getApplicationContext(),"",Toast.LENGTH_LONG);
 
         initLayout();
 
@@ -54,8 +54,8 @@ public class SelectActivity extends Activity implements View.OnClickListener {
         Intent intent = null;
         switch (view.getId()) {
 
-            case R.id.web:
-                intent = new Intent(SelectActivity.this, SpeechWeb.class);
+            case R.id.weather_button :
+                intent = new Intent(SelectActivity.this, SpeechWeather.class);
                 break;
             case R.id.dial:
                 intent = new Intent(SelectActivity.this, SpeechCall.class);
@@ -67,14 +67,13 @@ public class SelectActivity extends Activity implements View.OnClickListener {
 
         if (intent != null) {
             intent.putExtra("mUnderstanderResult", mUnderstanderResult);
-            //intent.putExtra("mJsonUnderResult",mJsonUnderResult.toString());
             startActivity(intent);
         }
 
     }
 
     private void initLayout() {
-        findViewById(R.id.web).setOnClickListener(SelectActivity.this);
+        findViewById(R.id.weather_button).setOnClickListener(SelectActivity.this);
         findViewById(R.id.dial).setOnClickListener(SelectActivity.this);
         findViewById(R.id.flight).setOnClickListener(SelectActivity.this);
     }

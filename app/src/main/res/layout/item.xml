@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView android:id="@+id/aPort"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="5px"/>
+    <TextView android:id="@+id/dPort"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="5px"/>
+    <TextView android:id="@+id/airline"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="5px"/>
+    <TextView android:id="@+id/takeOffTime"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="5px"/>
+    <TextView android:id="@+id/arriveTime"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_margin="5px"/>
+    <TextView android:id="@+id/cabinInfor"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_margin="5px"/>
+</LinearLayout>
